@@ -38,8 +38,8 @@ except ModuleNotFoundError as e:
     # Remove the installing dependency warning
     dependency_warning.empty()
 
-    # Import the new package
-    import adviser_assist
+    # Relaod the app
+    st.experimental_rerun()
 
 # Run the app!
 adviser_assist.app()
