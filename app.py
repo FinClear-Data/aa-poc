@@ -42,4 +42,4 @@ except ModuleNotFoundError as e:
     st.experimental_rerun()
 
 # Run the app!
-adviser_assist.app()
+adviser_assist.authenticate()
