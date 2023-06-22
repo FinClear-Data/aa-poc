@@ -17,7 +17,7 @@ st.set_page_config(
 # Import all private packages here at the start of the app boot.
 # You must "Reboot App" if you add more dependencies
 
-# based on https://discuss.streamlit.io/t/pip-installing-from-github/21484/5
+# Based on https://discuss.streamlit.io/t/pip-installing-from-github/21484/5
 try:
     import adviser_assist
 
@@ -32,11 +32,14 @@ except ModuleNotFoundError as e:
         f"{sys.executable} -m pip install git+https://${{github_token}}@github.com/FinClear-Data/adviser-assist.git"],
         shell=True)
 
-    # wait for subprocess to install package before running your actual code below
+    # Wait for subprocess to install package before running your actual code below
     time.sleep(sleep_time)
 
-    # remove the installing dependency warning
+    # Remove the installing dependency warning
     dependency_warning.empty()
 
-# Load secrets
+    # Import the new package
+    import adviser_assist
+
+# Run the app!
 adviser_assist.app()
